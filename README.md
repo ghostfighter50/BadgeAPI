@@ -122,7 +122,7 @@ id (**string**): The id of the badge.
 }
 ```
 ## Installing and setting up the Server
-To install and set upthe server, execute the following command:
+To install and set up the server, execute the following command:
 ```bash
 git clone https://github.com/ghostfighter50/BadgeAPI
 ```
