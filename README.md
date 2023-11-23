@@ -10,12 +10,10 @@ Get information about a badge by providing its name.
 ### Request Example
 
 ```http
-GET /api/badges/:name
+GET /api/badges/:id
 ```
 #### Parameters
-name (**string**): The name of the badge.
-
-  
+id (**string**): The id of the badge.
 
 ### Response Example
 
@@ -61,9 +59,8 @@ POST /api/badges
 ```
 ### Response Example
 
-```http  
-Created (201)
-```
+**Created (201)**
+
 ```json
 {
 "status": "CREATED",
