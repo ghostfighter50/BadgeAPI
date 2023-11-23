@@ -1,7 +1,7 @@
 
 # Badge API
 
-This API provides endpoints for managing badges.
+This simple nodejs/typescript/express API provides endpoints for managing RFID badges.
 
 # Get Badge by Id
 
