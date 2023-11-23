@@ -1,7 +1,12 @@
-
 # Badge API
 
-This simple nodejs/typescript/express API provides endpoints for managing RFID badges.
+This simple Node.js/TypeScript/Express API provides endpoints for managing RFID badges.
+
+- [Get Badge by ID](#get-badge-by-id)
+- [Add a New Badge](#add-a-new-badge)
+- [Delete a Badge by ID](#delete-a-badge-by-id)
+- [Installing and Setting Up the Server](#installing-and-setting-up-the-server)
+- [Running the Server](#running-the-server)
 
 # Get Badge by Id
 
