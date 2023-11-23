@@ -3,7 +3,7 @@
 
 This API provides endpoints for managing badges.
 
-# Get Badge by Name
+# Get Badge by Id
 
 Get information about a badge by providing its name.
 
@@ -102,6 +102,14 @@ DELETE /api/badges/:id
 {
 "status": "NOT FOUND",
 "message": "Badge not found"
+}
+```
+**Server Error (500)**
+
+```json
+{
+"status": "ERROR",
+"id": null
 }
 ```
 ## Installing and setting up the Server
