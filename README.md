@@ -95,7 +95,8 @@ Delete a badge by providing its ID.
 DELETE /api/badges/:id
 ```
 ### Response Example
-
+#### Parameters
+id (**string**): The id of the badge.
 **Deleted (200)**
 
 ```json
