@@ -75,7 +75,14 @@ POST /api/badges
 "message": "Invalid data for adding badge"
 }
 ```
-  
+**Server Error (500)**
+
+```json
+{
+"status": "ERROR",
+"id": null
+}
+```
 ## Delete a Badge by ID
 
 Delete a badge by providing its ID.
