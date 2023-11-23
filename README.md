@@ -125,6 +125,9 @@ To install and set upthe server, execute the following command:
 git clone https://github.com/ghostfighter50/BadgeAPI
 ```
 ```bash
+cd BadgeAPI
+```
+```bash
 npm install
 ```
 ```bash
