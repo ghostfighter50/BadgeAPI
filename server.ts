@@ -40,11 +40,7 @@ app.get('/api/badges/:id', (req: Request, res: Response) => {
         if (!badgeToFind) {
             return res.status(404).json({ status: 'NOT FOUND', message: 'Badge not found' });
         }
-        if (badgeToFind) {
-            return res.status(200).json({ status: 'OK', id: badgeId });
-        }
-
-        return res.status(404).json({ status: 'NOT FOUND', id: false });
+        return res.status(200).json({ status: 'OK', id: badgeId });
     } catch (error: any) {
         return res.status(500).json({ status: 'ERROR', id: null });
     }
