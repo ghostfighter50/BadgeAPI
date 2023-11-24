@@ -1,132 +1,147 @@
 # Badge API
 
-This API provides endpoints for managing badges.
+This simple Node.js/TypeScript/Express API provides endpoints for managing RFID badges.
 
-## Get Badge by Name
+- [Get Badge by ID](#get-badge-by-id)
+- [Add a New Badge](#add-a-new-badge)
+- [Delete a Badge by ID](#delete-a-badge-by-id)
+- [Installing and Setting Up the Server](#installing-and-setting-up-the-server)
+- [Running the Server](#running-the-server)
+
+# Get Badge by Id
 
 Get information about a badge by providing its name.
 
-### Request
+### Request Example
 
 ```http
-    GET /api/badges/:name
+GET /api/badges/:id
 ```
-    Parameters
+#### Parameters
+id (**string**): The id of the badge.
+
+### Response Example
+
+  
+**Success (200 OK)**
+
+```json
+{
+"status": "OK",
+"id": "badge123"
+}
 ```
-    name (string): The name of the badge.
+**Not Found (404)**
+
+```json
+{
+"status": "NOT FOUND",
+"id": false
+}
 ```
-    Response
+**Server Error (500)**
+
+```json
+{
+"status": "ERROR",
+"id": null
+}
 ```
-    Success (200 OK)
+  
+## Add a New Badge
+
+Add a new badge to the system.
+
+### Request Example
+```http
+POST /api/badges
 ```
 ```json
 {
-  "status": "OK",
-  "id": "badge123"
+"name": "NewBadge",
+"id": "newbadge123"
 }
-Not Found (404)
-json
-Copy code
-{
-  "status": "NOT FOUND",
-  "id": false
-}
-Server Error (500)
-json
-Copy code
-{
-  "status": "ERROR",
-  "id": null
-}
-Add a New Badge
-Add a new badge to the system.
+```
+### Response Example
 
-Request
-http
-Copy code
-POST /api/badges
-json
-Copy code
-{
-  "name": "NewBadge",
-  "id": "newbadge123"
-}
-Response
-Created (201)
-json
-Copy code
-{
-  "status": "CREATED",
-  "message": "Badge added successfully"
-}
-Bad Request (400)
-json
-Copy code
-{
-  "status": "BAD REQUEST",
-  "message": "Invalid data for adding badge"
-}
-Update a Badge by ID
-Update the information of a badge by providing its ID.
+**Created (201)**
 
-Request
-http
-Copy code
-PUT /api/badges/:id
-json
-Copy code
+```json
 {
-  "name": "UpdatedBadge",
-  "id": "updatedbadge123"
+"status": "CREATED",
+"message": "Badge added successfully"
 }
-Response
-Updated (200)
-json
-Copy code
+```
+**Bad Request (400)**
+
+```json
 {
-  "status": "UPDATED",
-  "message": "Badge updated successfully"
+"status": "BAD REQUEST",
+"message": "Invalid data for adding badge"
 }
-Not Found (404)
-json
-Copy code
+```
+**Server Error (500)**
+
+```json
 {
-  "status": "NOT FOUND",
-  "message": "Badge not found"
+"status": "ERROR",
+"id": null
 }
-Bad Request (400)
-json
-Copy code
-{
-  "status": "BAD REQUEST",
-  "message": "Invalid data for updating badge"
-}
-Delete a Badge by ID
+```
+## Delete a Badge by ID
+
 Delete a badge by providing its ID.
 
-Request
-http
-Copy code
-DELETE /api/badges/:id
-Response
-Deleted (200)
-json
-Copy code
-{
-  "status": "DELETED",
-  "message": "Badge deleted successfully"
-}
-Not Found (404)
-json
-Copy code
-{
-  "status": "NOT FOUND",
-  "message": "Badge not found"
-}
-Running the Server
-To run the server, execute the following command:
+### Request Example
 
-bash
-Copy code
+  
+
+```http
+DELETE /api/badges/:id
+```
+### Response Example
+#### Parameters
+id (**string**): The id of the badge.
+
+**Deleted (200)**
+
+```json
+{
+"status": "DELETED",
+"message": "Badge deleted successfully"
+}
+```
+**Not Found (404)**
+```json
+{
+"status": "NOT FOUND",
+"message": "Badge not found"
+}
+```
+**Server Error (500)**
+
+```json
+{
+"status": "ERROR",
+"id": null
+}
+```
+## Installing and setting up the Server
+To install and set up the server, execute the following command:
+```bash
+git clone https://github.com/ghostfighter50/BadgeAPI
+```
+```bash
+cd BadgeAPI
+```
+```bash
+npm install
+```
+```bash
 npm start
-The server will start on port 80.
+```
+## Running the Server
+To run the server, execute the following command:
+```bash
+npm start
+```
