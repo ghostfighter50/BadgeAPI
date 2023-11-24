@@ -35,7 +35,11 @@ app.use(express.json());
 app.get('/api/badges/:id', (req: Request, res: Response) => {
     try {
         const badgeId = req.params.id;
+        const badgeToFind = Object.entries(badgesData).find(([name, id]) => id === badgeId);
 
+        if (!badgeToFind) {
+            return res.status(404).json({ status: 'NOT FOUND', message: 'Badge not found' });
+        }
         if (badgeId) {
             return res.status(200).json({ status: 'OK', id: badgeId });
         }
