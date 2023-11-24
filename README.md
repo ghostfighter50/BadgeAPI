@@ -27,7 +27,7 @@ id (**string**): The id of the badge.
 
 ```json
 {
-"status" "OK",
+"status": "OK",
 "id": "badge123"
 }
 ```
