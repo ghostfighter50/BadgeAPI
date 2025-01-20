@@ -4,6 +4,8 @@ import fs from 'fs';
 const PORT = 80;
 const file = './database/badges.json';
 
+console.log(PORT)
+
 interface IBadgesData {
     [badgeName: string]: string;
 }
