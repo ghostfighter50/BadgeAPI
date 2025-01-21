@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 sh '''
-                talisman --version
+                /usr/bin/talisman --version
                 '''
             }
         }
