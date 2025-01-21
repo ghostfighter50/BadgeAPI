@@ -9,6 +9,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
+                sh '''
+                talisman --version
+                '''
             }
         }
         stage('Deploy') {
