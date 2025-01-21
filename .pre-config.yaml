@@ -1,0 +1,4 @@
+-   repo: https://github.com/ghostfighter50/BadgeAPI
+    hooks:
+      - id: talisman-commit
+        entry: cmd --githook pre-commit
