@@ -10,10 +10,6 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 sh '''
-                if ! [ -x "$(command -v talisman)" ]; then
-                    echo "Talisman is not installed or not in PATH!"
-                    exit 1
-                fi
                 talisman --version
                 '''
             }
