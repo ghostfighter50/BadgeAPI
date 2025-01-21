@@ -9,9 +9,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh '''
-                /usr/bin/talisman --version
-                '''
+                docker {
+                    '/usr/bin/talisman --version'
+                }
             }
         }
         stage('Deploy') {
