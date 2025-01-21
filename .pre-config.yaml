@@ -1,4 +1,6 @@
--   repo: https://github.com/ghostfighter50/BadgeAPI
+repos:
+-   repo: https://github.com/thoughtworks/talisman
+    rev: v1.22.0
     hooks:
-      - id: talisman-commit
+    -   id: talisman-commit
         entry: cmd --githook pre-commit

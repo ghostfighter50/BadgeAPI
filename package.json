@@ -8,7 +8,11 @@
     "typescript": "^5.3.2"
   },
   "scripts": {
-    "start": "ts-node ."
+    "start": "ts-node .",
+    "prepare": "husky"
   },
-  "main": "server.ts"
+  "main": "server.ts",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
 }
