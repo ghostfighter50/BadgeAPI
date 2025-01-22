@@ -1,22 +1,12 @@
 pipeline {
-    agent any
+    agent none
     stages {
-        stage('Build') {
+        stage("Build & Analyse avec SonarQube") {
+            agent any
             steps {
-                echo 'Building the project...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                docker {
-                    '/usr/bin/talisman --version'
+                script {
+                    sh 'mvn clean package sonar:sonar'
                 }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
             }
         }
     }
