@@ -20,7 +20,7 @@ pipeline {
                     -o './'
                     -s './'
                     -f 'ALL'
-                    --nvdApiKey bfaa6a2f-8b05-488e-907d-84ed2b993c0e  
+                    --nvdApiKey 'bfaa6a2f-8b05-488e-907d-84ed2b993c0e'
                     --prettyPrint''', odcInstallation: 'Dependency-Check'
                 
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
