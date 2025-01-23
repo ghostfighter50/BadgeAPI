@@ -1,17 +1,25 @@
-node {
-    stage('SCM') {
-        // Checkout code from the source control management (SCM) system
-        checkout scm
+pipeline {
+    agent any
+    tools {
+        maven 'Maven'
     }
 
-    stage('SonarQube Analysis') {
-        // Use the default Maven tool configured in Jenkins
-        def mvn = tool 'Maven';
+    stages {
 
-        // Use SonarQube environment configured in Jenkins
-        withSonarQubeEnv() {
-            // Run Maven with SonarQube analysis
-            sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=ghostfighter50_BadgeAPI_d2e7776c-a772-4efb-b9c8-5403376242a7 -Dsonar.projectName='BadgeAPI'"
+        stage('SonarQube Analysis') {
+            steps {
+                // Use the SonarQube environment configured in Jenkins
+                withSonarQubeEnv('ServerNameSonar') {
+                    // Replace localhost:9000 with the new SonarQube server URL
+                    bat '''
+                        mvn clean verify sonar:sonar \
+                        -Dsonar.projectKey=BadgeAPI \
+                        -Dsonar.projectName='BadgeAPI' \
+                        -Dsonar.host.url=http://localhost:9000
+                    '''
+                    echo 'SonarQube Analysis Completed'
+                }
+            }
         }
     }
 }
