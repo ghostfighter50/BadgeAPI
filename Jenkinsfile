@@ -6,7 +6,7 @@ node {
 
     stage('SonarQube Analysis') {
         // Use the default Maven tool configured in Jenkins
-        def mvn = tool 'Default Maven';
+        def mvn = tool 'Maven';
 
         // Use SonarQube environment configured in Jenkins
         withSonarQubeEnv() {
