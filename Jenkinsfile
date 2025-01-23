@@ -11,7 +11,7 @@ pipeline {
                 // Use the SonarQube environment configured in Jenkins
                 withSonarQubeEnv('ServerNameSonar') {
                     // Replace localhost:9000 with the new SonarQube server URL
-                    bat '''
+                    sh '''
                         mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=ghostfighter50_BadgeAPI_d2e7776c-a772-4efb-b9c8-5403376242a7 \
                         -Dsonar.projectName='BadgeAPI' \
