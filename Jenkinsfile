@@ -13,7 +13,7 @@ pipeline {
                     // Replace localhost:9000 with the new SonarQube server URL
                     bat '''
                         mvn clean verify sonar:sonar \
-                        -Dsonar.projectKey=BadgeAPI \
+                        -Dsonar.projectKey=ghostfighter50_BadgeAPI_d2e7776c-a772-4efb-b9c8-5403376242a7 \
                         -Dsonar.projectName='BadgeAPI' \
                         -Dsonar.host.url=http://localhost:9000
                     '''
